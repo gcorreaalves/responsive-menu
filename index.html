@@ -3,172 +3,106 @@
 <head>
   <meta charset="utf-8">
 	<title>Título da página</title>
+
+	<link rel="stylesheet" href="css/responsiveMenu.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/icomoon.css">
 	
 	<style type="text/css">
-		*{
-			margin:0;
-			padding:0;
-			list-style: none;
-				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-				-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-				box-sizing: border-box;         /* Opera/IE 8+ */
-		}
-		.nav-menu{
-			width:400px;
-			margin:10px auto;
-			font-family:arial;
-		}
-		.nav-menu a{
-			color:#0090d8;
-			text-decoration: none;
-			display:block;
-			width:100%;
-			padding:8px 0 8px 10px;
-		}
-		ul li{
-			padding:5px;			
-		}
-		nav > ul > li{
-			display:inline-block;
-			padding:5px 20px;
-			border-left:1px solid #ccc;
-		}
-		nav > ul > li:first-child{
-			border:none;
-		}
-		ul li ul{
-			position: absolute;
-			width:150px;
-			display:none;
-			background: #eee;
-			border:1px solid #ccc;
-		}
-		nav > ul > li > ul > li ul{
-			left:148px;
-			margin-top:-41px;
-		}
-		ul > li ul li {
-			display:block;
-			border:none;
-			border-top:1px solid #ccc;			
-		}
-		nav > ul > li ul li:first-child {			
-			border:none;
-		}
-		ul li:hover > ul{
-			display:inline-block;
-		}
 
-	@media only screen and (max-width : 800px) {
-		.responsive-nav, .responsive-nav ul, .responsive-nav li{
-			width:100%;
-		}
-		.responsive-nav ul{
-			position:relative;
-			display:block;
-			left:0;
-			margin:0;
-		}
-		.responsive-nav ul li{
-			display:block;
-			padding:0;
-			margin:0;
-		}
-		.responsive-nav > ul > li ul li{
-			border-left:5px solid #ccc!important;
-		}
-		.responsive-nav > ul > li ul{
-			display:none;
-		}
-		
-	}
 
 	</style>
+
 	<script src="js/jquery.min.js"></script> 
 	<script src="js/responsiveMenu.js"></script> 
 	
-	<script type="text/javascript">
-
-	
+	<script type="text/javascript">	
 
 		$(document).ready(function(){
 
-			$('.nav-menu').responsiveMenu({'userWidth':400});
-
+			$('#menu').responsiveMenu({
+				userWidth : 800,
+				open 	  : 'after',
+				linkMenu	  : '.toggleMenu',
+			});
 	  }); 
 
-
-
 	</script>
-
 
 </head>
 
 <body>
-
-<nav class="nav-menu">
-	<ul>
-		<li>
-			<a href="#">Link 1</a>					
-			<ul>
-				<li>
-					<a href="#">Link 1.1</a>										
-					<ul>
-						<li>
-							<a href="#">Link 1.1.1</a>	
-							<ul>
-								<li>
-									<a href="#">Link 1.1.1.1</a>							
-								</li>
-								<li><a href="#">Link 2.1.1.1</a></li>
-								<li><a href="#">Link 3.1.1.1</a></li>
-								<li><a href="#">Link 4.1.1.1</a></li>
-							</ul>						
-						</li>
-						<li><a href="#">Link 2.1.1</a></li>
-						<li><a href="#">Link 3.1.1</a></li>
-						<li><a href="#">Link 4.1.1</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Link 2.1</a></li>
-				<li><a href="#">Link 3.1</a></li>
-				<li>
-					<a href="#">Link 4.1</a>
-					<ul>
-						<li>
-							<a href="#">Link 1.4.1</a>							
-						</li>
-						<li><a href="#">Link 2.4.1</a></li>
-						<li><a href="#">Link 3.4.1</a></li>
-						<li><a href="#">Link 4.4.1</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li><a href="#">Link 2</a></li>
-		<li><a href="#">Link 3</a></li>
-		<li>
-			<a href="#">Link 4</a>
-			<ul>
-				<li>
-					<a href="#">Link 1</a>										
-					<ul>
-						<li>
-							<a href="#">Link 1</a>
-							
-						</li>
-						<li><a href="#">Link 2</a></li>
-						<li><a href="#">Link 3</a></li>
-						<li><a href="#">Link 4</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-			</ul>
-		</li>
-	</ul>
-</nav>
+<div id="menu-top">
+	<a href="#" class="logo">
+		Logo
+	</a>
+	<a href="#" class="toggleMenu">
+		<span aria-hidden="true" class="icon-menu"></span>
+	</a>
+	<nav class="nav-menu" id="menu">
+		<ul>
+			<li>
+				<a href="http://globo.com">Link 1</a>					
+				<ul>
+					<li>
+						<a href="#">Link 1.1</a>										
+						<ul>
+							<li>
+								<a href="#">Link 1.1.1</a>	
+								<ul>
+									<li>
+										<a href="#">Link 1.1.1.1</a>							
+									</li>
+									<li><a href="#">Link 2.1.1.1</a></li>
+									<li><a href="#">Link 3.1.1.1</a></li>
+									<li><a href="http://youtube.com">Link 4.1.1.1</a></li>
+								</ul>						
+							</li>
+							<li><a href="#">Link 2.1.1</a></li>
+							<li><a href="#">Link 3.1.1</a></li>
+							<li><a href="#">Link 4.1.1</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Link 2.1</a></li>
+					<li><a href="#">Link 3.1</a></li>
+					<li>
+						<a href="#">Link 4.1</a>
+						<ul>
+							<li>
+								<a href="#">Link 1.4.1</a>							
+							</li>
+							<li><a href="#">Link 2.4.1</a></li>
+							<li><a href="#">Link 3.4.1</a></li>
+							<li><a href="#">Link 4.4.1</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">Link 2</a></li>
+			<li><a href="#">Link 3</a></li>
+			<li>
+				<a href="#">Link 4</a>
+				<ul>
+					<li>
+						<a href="#">Link 1</a>										
+						<ul>
+							<li>
+								<a href="#">Link 1</a>
+								
+							</li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+							<li><a href="#">Link 4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
 
 </body>
 
